@@ -1,103 +1,184 @@
+import { Clients } from "@/components/clients";
+import { FeaturedProductsCrousal } from "@/components/featured-products";
+import { DesktopHero, MobileHero } from "@/components/home-hero";
+import { RecentProjects } from "@/components/recent-projects";
+import { CustomButton } from "@/components/ui/custom-button";
+import { ScewedImage } from "@/components/ui/scewed-image";
+import { SectionCard } from "@/components/ui/section-card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { WorkWithUs } from "@/components/work-with-us";
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative min-h-[85svh]">
+      {/* Hero Section */}
+      <MobileHero />
+      <DesktopHero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Service and Manufacturing Section */}
+      <SectionCard className="">
+        <div className="grid lg:grid-cols-2 gap-4 items-center col-span-full">
+          {/* Chemistry Panel */}
+          <div className="bg-primary px-8 py-16 relative overflow-hidden flex flex-col justify-end md:h-142">
+            {/* Molecular Structure Background */}
+            <div className="absolute inset-0 opacity-20">
+              <svg
+                viewBox="0 0 800 400"
+                className="w-full h-full"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Molecular structure lines */}
+                <g stroke="white" strokeWidth="2">
+                  <line x1="100" y1="100" x2="180" y2="100" />
+                  <line x1="180" y1="100" x2="220" y2="150" />
+                  <line x1="220" y1="150" x2="300" y2="150" />
+                  <line x1="300" y1="150" x2="340" y2="100" />
+                  <line x1="340" y1="100" x2="420" y2="100" />
+                  <line x1="420" y1="100" x2="460" y2="150" />
+                  <line x1="460" y1="150" x2="540" y2="150" />
+                  <line x1="540" y1="150" x2="580" y2="200" />
+                  <line x1="580" y1="200" x2="660" y2="200" />
+                  <line x1="660" y1="200" x2="700" y2="150" />
+                  <line x1="700" y1="150" x2="780" y2="150" />
+
+                  <line x1="180" y1="100" x2="180" y2="50" />
+                  <line x1="220" y1="150" x2="220" y2="200" />
+                  <line x1="300" y1="150" x2="300" y2="200" />
+                  <line x1="340" y1="100" x2="340" y2="50" />
+                  <line x1="420" y1="100" x2="420" y2="50" />
+                  <line x1="460" y1="150" x2="460" y2="200" />
+                  <line x1="540" y1="150" x2="540" y2="100" />
+                  <line x1="580" y1="200" x2="580" y2="250" />
+                  <line x1="660" y1="200" x2="660" y2="250" />
+                  <line x1="700" y1="150" x2="700" y2="100" />
+
+                  <line x1="180" y1="50" x2="260" y2="50" />
+                  <line x1="340" y1="50" x2="420" y2="50" />
+                  <line x1="540" y1="100" x2="620" y2="100" />
+                  <line x1="620" y1="100" x2="700" y2="100" />
+                </g>
+
+                {/* Molecular nodes */}
+                <g fill="none" stroke="white" strokeWidth="3">
+                  <circle cx="100" cy="100" r="15" />
+                  <circle cx="180" cy="100" r="15" />
+                  <circle cx="220" cy="150" r="15" />
+                  <circle cx="300" cy="150" r="15" />
+                  <circle cx="340" cy="100" r="15" />
+                  <circle cx="420" cy="100" r="15" />
+                  <circle cx="460" cy="150" r="15" />
+                  <circle cx="540" cy="150" r="15" />
+                  <circle cx="580" cy="200" r="15" />
+                  <circle cx="660" cy="200" r="15" />
+                  <circle cx="700" cy="150" r="15" />
+                  <circle cx="780" cy="150" r="15" />
+
+                  <circle cx="180" cy="50" r="15" />
+                  <circle cx="220" cy="200" r="15" />
+                  <circle cx="300" cy="200" r="15" />
+                  <circle cx="340" cy="50" r="15" />
+                  <circle cx="420" cy="50" r="15" />
+                  <circle cx="460" cy="200" r="15" />
+                  <circle cx="540" cy="100" r="15" />
+                  <circle cx="580" cy="250" r="15" />
+                  <circle cx="660" cy="250" r="15" />
+                  <circle cx="700" cy="100" r="15" />
+
+                  <circle cx="260" cy="50" r="15" />
+                  <circle cx="620" cy="100" r="15" />
+                </g>
+              </svg>
+            </div>
+
+            <div className="relative z-10 max-w-lg">
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+                Engineering Services That Power Industry
+              </h2>
+              <p className="text-white text-lg leading-relaxed mb-8">
+                From power systems and HVAC installations to structural steel
+                fabrication and epoxy flooring — we deliver turnkey
+                electromechanical services with speed, safety, and precision.
+                Whether upgrading infrastructure or building from the ground up,
+                our team ensures quality at every stage.
+              </p>
+              <CustomButton variant="primary" link="/services">
+                View All Products
+              </CustomButton>
+            </div>
+          </div>
+
+          {/* Manufacturing Panel */}
+          <div className="relative px-8 py-16 overflow-hidden  flex flex-col justify-end md:h-142">
+            <div className="absolute inset-0">
+              <Image
+                src="/images/cemrecan-yurtman-pun3UkaC5VY-unsplash.jpg"
+                alt="Industrial warehouse and manufacturing facility"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/60"></div>
+            </div>
+
+            <div className="relative z-10 max-w-lg">
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+                Built to Spec. Manufactured to Last.
+              </h2>
+              <p className="text-white text-lg leading-relaxed mb-8">
+                Our in-house manufacturing facility produces high-strength
+                components essential for industrial and electrical
+                infrastructure. All products are precision-engineered,
+                galvanized to specification, and built for durability in
+                demanding environments.
+              </p>
+              <CustomButton variant="primary" link="/products">
+                Find out more
+              </CustomButton>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </SectionCard>
+
+      {/* Featured Products */}
+      <FeaturedProductsCrousal />
+
+      {/* Global Reach Section */}
+      <SectionCard variant="primary">
+        <div>
+          <SectionHeading variant="primary">
+            {"Global Standards, Local Expertise"}
+          </SectionHeading>
+          <p className="text-lg text-white mb-6 leading-relaxed">
+            While rooted in Ethiopia, HF Engineering applies international
+            standards and best practices to deliver world-class
+            electromechanical solutions. Our expertise spans across various
+            industrial sectors, from power generation to telecommunications
+            infrastructure.
+          </p>
+          <p className="text-lg text-white mb-8 leading-relaxed">
+            We combine local knowledge with global engineering excellence to
+            serve Ethiopia's growing industrial needs, partnering with
+            international organizations and maintaining certifications that meet
+            worldwide standards.
+          </p>
+          <CustomButton link="#">Discover more</CustomButton>
+        </div>
+        <ScewedImage
+          imageUrl="/images/service-4.jpg"
+          alt="Global Standards, Local Expertise"
+          variant="left-scewed"
+        />
+      </SectionCard>
+
+      {/* Recent Projects */}
+      <RecentProjects />
+
+      {/* Our Clients */}
+      <Clients />
+
+      {/* Work with Us */}
+      <WorkWithUs />
     </div>
   );
 }
