@@ -108,7 +108,7 @@ export const DesktopHero = () => {
 
           {/* Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-5xl items-end h-68 py-0">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.id}
                 className="group relative backdrop-blur-sm h-48 bg-white/10 p-6 cursor-pointer transition-all duration-500 ease-in-out hover:backdrop-blur-sm hover:bg-white/5 hover:h-52 border border-white/10"
@@ -219,7 +219,7 @@ export const MobileHero = () => {
 
       {/* Service Cards */}
       <div className="flex flex-col gap-8 py-0 px-6 mt-[-64]">
-        {services.map((service, index) => (
+        {services.map((service) => (
           <div key={service.id} className="relative h-36 p-8">
             <div
               className="absolute inset-0 bg-cover bg-center"
