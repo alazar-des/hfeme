@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export const DesktopHero = () => {
@@ -67,17 +68,19 @@ export const DesktopHero = () => {
 
   return (
     <section className="relative h-[85svh] overflow-hidden hidden md:block">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
-        style={{
-          backgroundImage: `url('${currentBackground}')`,
-        }}
+      {/* Background Image as an optimized Next.js Image */}
+      <Image
+        src={currentBackground!}
+        alt="Background"
+        fill
+        quality={100}
+        priority // preloads image to prevent flash
+        className="object-cover object-center"
       />
 
       {/* Dynamic Overlay */}
       <div
-        className="absolute inset-0 transition-all duration-700 ease-in-out"
+        className="absolute inset-0 transition-all duration-700 ease-in-out z-10"
         style={{
           background: hoveredService
             ? `linear-gradient(135deg, ${
