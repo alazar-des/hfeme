@@ -158,7 +158,7 @@ export default function HomePage() {
           </p>
           <p className="text-lg text-white mb-8 leading-relaxed">
             We combine local knowledge with global engineering excellence to
-            serve Ethiopia's growing industrial needs, partnering with
+            serve Ethiopia&apos;s growing industrial needs, partnering with
             international organizations and maintaining certifications that meet
             worldwide standards.
           </p>

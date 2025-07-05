@@ -63,7 +63,7 @@ export const Certification = () => {
             Our Certifications
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
-            Our team's professional qualifications and certifications
+            Our team&apos;s professional qualifications and certifications
             demonstrate our commitment to excellence and continuous learning in
             industrial solutions.
           </p>

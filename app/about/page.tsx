@@ -1,4 +1,3 @@
-import { Certification } from "@/components/certification";
 import { ContactForm } from "@/components/contact-form";
 import { Partners } from "@/components/partners";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,7 +5,7 @@ import { CustomButton } from "@/components/ui/custom-button";
 import { ScewedImage } from "@/components/ui/scewed-image";
 import { SectionCard } from "@/components/ui/section-card";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ArrowRight, Award, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutUsPage() {
@@ -95,7 +94,7 @@ export default function AboutUsPage() {
           </p>
           <p className="text-lg text-[#6D6A70] mb-8 leading-relaxed">
             We combine local knowledge with global engineering excellence to
-            serve Ethiopia's growing industrial needs, partnering with
+            serve Ethiopia&apos;s growing industrial needs, partnering with
             international organizations and maintaining certifications that meet
             worldwide standards.
           </p>
@@ -154,9 +153,9 @@ export default function AboutUsPage() {
           <div className="text-center mb-16">
             <SectionHeading variant="primary">HF Engineering</SectionHeading>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              As Ethiopia's leading electromechanical engineering firm, we
+              As Ethiopia&apos;s leading electromechanical engineering firm, we
               specialize in comprehensive industrial solutions that power the
-              nation's growth and development.
+              nation&apos;s growth and development.
             </p>
           </div>
 
@@ -183,13 +182,13 @@ export default function AboutUsPage() {
                 <h3 className="text-2xl font-bold mb-4">Our Ambition</h3>
                 <div>
                   <span className="leading-relaxed font-semibold">
-                    To be the region’s most trusted and innovative
+                    To be the region&apos;s most trusted and innovative
                     electromechanical partner.
                   </span>{" "}
                   <span className="text-blue-100 leading-relaxed">
                     Committed to environmentally responsible practices,
                     energy-efficient solutions, and sustainable manufacturing
-                    processes that benefit Ethiopia's future.
+                    processes that benefit Ethiopia&apos;s future.
                   </span>
                 </div>
               </div>
@@ -227,7 +226,7 @@ export default function AboutUsPage() {
           </p>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
             All our products undergo rigorous testing and quality control
-            processes, ensuring reliability and longevity in Ethiopia's
+            processes, ensuring reliability and longevity in Ethiopia&apos;s
             demanding industrial environments.
           </p>
           <CustomButton link="/products">Discover Products</CustomButton>

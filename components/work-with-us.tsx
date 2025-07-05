@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import { SectionCard } from "./ui/section-card";
 import { SectionHeading } from "./ui/section-heading";
 import { CustomButton } from "./ui/custom-button";
@@ -25,10 +24,7 @@ export const WorkWithUs = () => {
       {/* Right Side - Staggered Images */}
       <div className="relative h-96 lg:h-[500px]">
         {/* Top Right - Industrial Worker */}
-        <div
-          className="absolute top-0 right-10 w-32 h-32 lg:w-48 lg:h-48 z-10"
-          
-        >
+        <div className="absolute top-0 right-10 w-32 h-32 lg:w-48 lg:h-48 z-10">
           <Image
             src="/images/image-5.jpg"
             alt="Industrial worker in tunnel"

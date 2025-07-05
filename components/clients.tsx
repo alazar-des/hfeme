@@ -26,7 +26,7 @@ export const Clients = () => {
       <div className="text-center col-span-full">
         <SectionHeading>Our Clients</SectionHeading>
         <p className="text-[#6D6A70] text-lg leading-relaxed max-w-3xl mx-auto">
-          We're proud to work with industry-leading companies who trust NCH
+          We&apos;re proud to work with industry-leading companies who trust NCH
           Europe for their industrial maintenance and facilities management
           solutions.
         </p>

@@ -4,12 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MapPinHouseIcon, Menu, PhoneCallIcon, X } from "lucide-react";
-import { CustomButton } from "./ui/custom-button";
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  YouTubeIcon,
-} from "@/public/images/svgs/icons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,13 +106,13 @@ export default function Navbar() {
             <div className="items-center space-x-8 mt-10">
               <div className="flex flex-col space-y-8">
                 <div className="flex gap-4 items-center justify-start text-[#6D6A70]">
-                  <MapPinHouseIcon className="bg-primary text-white w-8 h-8 p-1.5 rounded-full"/>
+                  <MapPinHouseIcon className="bg-primary text-white w-8 h-8 p-1.5 rounded-full" />
                   <span className="font-medium">
                     A.A Bole Subcuty, Worda 14 Alem Gebre Building
                   </span>
                 </div>
                 <div className="flex gap-4 items-center justify-start text-[#6D6A70]">
-                  <PhoneCallIcon className="bg-primary text-white w-8 h-8 p-1.5 rounded-full"/>
+                  <PhoneCallIcon className="bg-primary text-white w-8 h-8 p-1.5 rounded-full" />
                   <span className="font-medium">
                     +251 911686078 / +251 991606171
                   </span>

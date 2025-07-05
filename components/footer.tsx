@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
             <p className="text-blue-100 text-sm leading-relaxed mb-6">
               Leading electromechanical engineering and manufacturing firm
-              serving Ethiopia's industrial sector with innovative, sustainable
+              serving Ethiopia&apos;s industrial sector with innovative, sustainable
               solutions.
             </p>
             <Button className="bg-white text-primary hover:bg-gray-100 text-sm px-4 py-2 cursor-pointer">
