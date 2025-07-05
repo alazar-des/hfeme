@@ -67,72 +67,86 @@ export const DesktopHero = () => {
     : "/images/image-5.jpg";
 
   return (
-    <section className="relative h-[85svh] overflow-hidden hidden md:block">
-      {/* Background Image as an optimized Next.js Image */}
-      <Image
-        src={currentBackground!}
-        alt="Background"
-        fill
-        quality={100}
-        priority // preloads image to prevent flash
-        className="object-cover object-center"
-      />
+    <>
+      {/* Preload all service images invisibly */}
+      {services.map((s) => (
+        <Image
+          key={s.id}
+          src={s.backgroundImage}
+          alt=""
+          width={1}
+          height={1}
+          style={{ display: "none" }}
+          priority
+        />
+      ))}
+      <section className="relative h-[85svh] overflow-hidden hidden md:block">
+        {/* Background Image as an optimized Next.js Image */}
+        <Image
+          src={currentBackground!}
+          alt="Background"
+          fill
+          quality={100}
+          priority // preloads image to prevent flash
+          className="object-cover object-center"
+        />
 
-      {/* Dynamic Overlay */}
-      <div
-        className="absolute inset-0 transition-all duration-700 ease-in-out z-10"
-        style={{
-          background: hoveredService
-            ? `linear-gradient(135deg, ${
-                services.find((s) => s.id === hoveredService)?.color
-              }80 0%, ${
-                services.find((s) => s.id === hoveredService)?.color
-              }3D 100%)`
-            : "linear-gradient(135deg, rgba(1, 113, 188, 0.4) 0%, rgba(1, 113, 188, 0.25) 100%)",
-        }}
-      />
+        {/* Dynamic Overlay */}
+        <div
+          className="absolute inset-0 transition-all duration-700 ease-in-out z-10"
+          style={{
+            background: hoveredService
+              ? `linear-gradient(135deg, ${
+                  services.find((s) => s.id === hoveredService)?.color
+                }80 0%, ${
+                  services.find((s) => s.id === hoveredService)?.color
+                }3D 100%)`
+              : "linear-gradient(135deg, rgba(1, 113, 188, 0.4) 0%, rgba(1, 113, 188, 0.25) 100%)",
+          }}
+        />
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center lg:px-48 pt-20">
-        <div className="container flex flex-col mx-auto h-full justify-between">
-          <div className="h-full flex flex-col justify-end">
-            <div className="max-w-6xl mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-8 leading-tight transition-all duration-500 ease-in-out">
-                {currentHeadline}
-              </h1>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl md:text-2xl text-white font-normal mb-8">
-                {currentSubheading}
-              </h2>
-            </div>
-          </div>
-
-          {/* Service Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-5xl items-end h-68 py-0">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="group relative backdrop-blur-sm h-48 bg-white/10 p-6 cursor-pointer transition-all duration-500 ease-in-out hover:backdrop-blur-sm hover:bg-white/5 hover:h-52 border border-white/10"
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
-              >
-                <div className="relative z-10">
-                  <h3 className="text-lg font-medium text-white mb-4 leading-tight">
-                    {service.title}
-                  </h3>
-                  <div
-                    className="w-4 h-4 rounded-full"
-                    style={{ backgroundColor: service.color }}
-                  />
-                </div>
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center lg:px-48 pt-20">
+          <div className="container flex flex-col mx-auto h-full justify-between">
+            <div className="h-full flex flex-col justify-end">
+              <div className="max-w-6xl mb-12">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-8 leading-tight transition-all duration-500 ease-in-out">
+                  {currentHeadline}
+                </h1>
               </div>
-            ))}
+
+              <div className="mb-12">
+                <h2 className="text-2xl md:text-2xl text-white font-normal mb-8">
+                  {currentSubheading}
+                </h2>
+              </div>
+            </div>
+
+            {/* Service Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-5xl items-end h-68 py-0">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="group relative backdrop-blur-sm h-48 bg-white/10 p-6 cursor-pointer transition-all duration-500 ease-in-out hover:backdrop-blur-sm hover:bg-white/5 hover:h-52 border border-white/10"
+                  onMouseEnter={() => setHoveredService(service.id)}
+                  onMouseLeave={() => setHoveredService(null)}
+                >
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-medium text-white mb-4 leading-tight">
+                      {service.title}
+                    </h3>
+                    <div
+                      className="w-4 h-4 rounded-full"
+                      style={{ backgroundColor: service.color }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
