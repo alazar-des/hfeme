@@ -156,16 +156,14 @@ export default function ProductsPage() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
                     {product.description}
                   </p>
-                  <Link href="#">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-full px-4 py-2 bg-transparent flex items-center space-x-2"
-                    >
-                      <span>Learn More</span>
-                      <ChevronRight className="w-4 h-4" />
-                    </Button>
-                  </Link>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-full px-4 py-2 bg-transparent flex items-center space-x-2"
+                  >
+                    <span>Learn More</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
             ))}
