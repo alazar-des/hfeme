@@ -18,6 +18,16 @@ export const DesktopHero = () => {
       backgroundImage: "/images/image-1.jpg",
     },
     {
+      id: "Solar Power",
+      title: "Solar Power Solutions",
+      color: "#0077C8",
+      hoverHeadline:
+        "Harness the Sun with Our Advanced Solar Power Systems",
+      hoverSubheading:
+        "From solar panels to complete solar power systems Design and Instalation— engineered for efficiency and sustainability.",
+      backgroundImage: "/images/resized-1200x800-image (1).jpg",
+    },
+    {
       id: "hvac",
       title: "HVAC & Fire Protection Solutions",
       color: "#009fa0",
@@ -123,7 +133,7 @@ export const DesktopHero = () => {
             </div>
 
             {/* Service Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-5xl items-end h-68 py-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2 max-w-5xl items-end h-68 py-0">
               {services.map((service) => (
                 <div
                   key={service.id}

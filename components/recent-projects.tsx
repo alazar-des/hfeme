@@ -39,6 +39,14 @@ export const RecentProjects = () => {
               badgeColor="#004038"
             />
             <ProjectCard
+              imageUrl="/images/solar-water-pumping-system-500x500.webp"
+              title="Solar Water Pumping System"
+              description="Advanced solar water pumping system designed for sustainable irrigation and water supply, integrating high-efficiency solar panels with robust pumping technology."
+              buttonText="View Detail"
+              badgeText="Solar Energy"
+              badgeColor="#0077C8"
+            />
+            <ProjectCard
               imageUrl="/images/image-320x200-4.jpg"
               title="Epoxy flooring"
               description="High-performance epoxy flooring installation providing industrial-grade protection, chemical resistance, and a seamless finish for heavy-duty operational environments."

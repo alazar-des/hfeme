@@ -28,7 +28,7 @@ export default function Navbar() {
               </div>
               <div className="hidden sm:block">
                 <span className="text-lg font-bold text-white">
-                  HF Engineering
+                  HF EME
                 </span>
               </div>
             </Link>
