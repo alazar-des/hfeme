@@ -156,7 +156,7 @@ export default function ProductsPage() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
                     {product.description}
                   </p>
-                  <Link href={`/products/${product.name}`}>
+                  <Link href="#">
                     <Button
                       variant="outline"
                       size="sm"
