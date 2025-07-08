@@ -1,16 +1,15 @@
 import { ProjectCard } from "./project-card";
 import { Button } from "./ui/button";
+import { SectionHeading } from "./ui/section-heading";
 
 export const RecentProjects = () => {
   return (
-    <section className="bg-[#E7F1F6] py-32 px-4 md:px-8">
+    <section className="bg-[#E7F1F6] py-32 px-4 md:px-8 flex flex-col">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-start mb-12">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-light text-primary mb-6">
-              Our Resent Projects
-            </h2>
+            <SectionHeading>Our Resent Projects</SectionHeading>
             <p className="text-[#6D6A70] text-lg leading-relaxed">
               Explore our latest engineering achievements and successful
               installations across power, HVAC, mechanical, and manufacturing

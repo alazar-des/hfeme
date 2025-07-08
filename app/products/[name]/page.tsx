@@ -1,12 +1,13 @@
 "use client";
 
+import { RelatedProductsCrousal } from "@/components/related-products";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CustomButton } from "@/components/ui/custom-button";
 import { SectionCard } from "@/components/ui/section-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { allProducts } from "@/data/products";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -15,12 +16,15 @@ export default function ProductDetailPage() {
   const { name } = useParams<{ name: string }>();
   const decodedName = decodeURIComponent(name || "");
   const product = allProducts.find((product) => product.name === decodedName);
+  const relatedProducts = allProducts.filter(
+    (p) => p.type === product?.type && p.name !== product?.name
+  );
 
   return (
     <div className="min-h-screen flex flex-col items-center">
       {product ? (
         <div className="flex items-center flex-col w-full">
-          <SectionCard className="">
+          <SectionCard id="overview" className="">
             <Link href="/products" className="col-span-full">
               <Button
                 variant="ghost"
@@ -56,24 +60,61 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </SectionCard>
-          <div className="hidden lg:flex w-full flex-1 bg-primary py-4 items-center">
+          <div className="hidden lg:flex w-full flex-1 bg-primary py-4 items-center sticky top-0 z-50">
             <div className="max-w-7xl px-6 md:px-48 md:w-[70%]">
               <div className="flex gap-20 justify-start text-white">
                 <span className="text-lg font-medium">Jump To:</span>
                 <div className="flex gap-16 text-lg">
-                  <Link href="#features" className="hover:underline">
+                  <Link href="#overview" className="">
+                    Overview
+                  </Link>
+                  <Link href="#features" className="">
                     Features
                   </Link>
-                  <Link href="#specifications" className="hover:underline">
+                  <Link href="#specifications" className="">
                     Specifications
                   </Link>
-                  <Link href="#applications" className="hover:underline">
-                    Applications
-                  </Link>
+                  {relatedProducts.length && (
+                    <Link href="#related-products" className="">
+                      Related Products
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
           </div>
+          <SectionCard id="features" className="w-full bg-[#E7F1F6]">
+            <SectionHeading variant="secondary" className="col-span-full">
+              Features
+            </SectionHeading>
+            <div className="flex flex-col gap-6 col-span-full text-lg text-[#6D6A70]">
+              {product.features.map((feature) => (
+                <div className="flex gap-4 items-center" key={feature}>
+                  <CircleCheckBig className="" />
+                  <span className="font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </SectionCard>
+          <SectionCard id="specifications" className="w-full" gap={24}>
+            <SectionHeading variant="secondary" className="col-span-full mb-0">
+              Specifications
+            </SectionHeading>
+            <div className="col-span-full text-lg">
+              {Object.entries(product.specification).map(([key, value]) => (
+                <div
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-3 border-b border-muted last:border-b-0 text-[#6D6A70]"
+                  key={key}
+                >
+                  <span className="font-semibold">{key}</span>
+                  <span className="">{value}</span>
+                </div>
+              ))}
+            </div>
+          </SectionCard>
+          {relatedProducts.length && (
+            <RelatedProductsCrousal relatedProducts={relatedProducts} />
+          )}
         </div>
       ) : (
         <SectionCard className="h-[90vh] col-span-full">

@@ -7,6 +7,7 @@ import { ScewedImage } from "@/components/ui/scewed-image";
 import { SectionCard } from "@/components/ui/section-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { WorkWithUs } from "@/components/work-with-us";
+import { allProducts } from "@/data/products";
 import Image from "next/image";
 
 export default function HomePage() {
@@ -141,7 +142,11 @@ export default function HomePage() {
       </SectionCard>
 
       {/* Featured Products */}
-      <FeaturedProductsCrousal />
+      <FeaturedProductsCrousal
+        featuredProducts={allProducts.filter(
+          (product) => product.featured === true
+        )}
+      />
 
       {/* Global Reach Section */}
       <SectionCard variant="primary">

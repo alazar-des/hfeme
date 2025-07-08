@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { allProducts } from "@/data/products";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -70,10 +71,8 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              Browse our Parts Cleaning products
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
+            <SectionHeading className="">Browse our products</SectionHeading>
+            <p className="text-[#6D6A70] text-lg leading-relaxed max-w-3xl">
               Use the filtering options or view all products to find the
               solution you are looking for. Please contact our team for more
               information, product demonstrations or to purchase.
@@ -82,16 +81,16 @@ export default function ProductsPage() {
 
           {/* Filter Bar */}
           <div className="bg-gray-50 rounded-lg p-6 mb-12">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center space-x-4 space-y-4">
-              <span className="text-gray-700 font-medium">
+            <div className="flex flex-col lg:flex-row lg:items-center space-x-4 space-y-4">
+              <span className="text-[#6D6A70] font-medium">
                 What can we help you find today?
               </span>
               <div className="flex items-center space-x-4">
                 <Button
                   className={`rounded-full px-6 py-2 ${
                     selectedCategory === "All Products"
-                      ? "bg-gray-800 text-white hover:bg-gray-700"
-                      : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                      ? "bg-primary text-white hover:bg-primary/90"
+                      : "bg-white text-[#6D6A70] border border-gray-300 hover:bg-gray-50"
                   }`}
                   onClick={() => handleCategoryChange("All Products")}
                 >
@@ -101,7 +100,11 @@ export default function ProductsPage() {
                 <div className="relative">
                   <Button
                     variant="outline"
-                    className="rounded-full px-6 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-50"
+                    className={`rounded-full px-6 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-50 ${
+                      selectedCategory !== "All Products"
+                        ? "bg-primary text-white hover:bg-primary/90 hover:text-white"
+                        : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                    }`}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
                     {selectedCategory === "All Products"
@@ -146,24 +149,26 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="text-start mb-4">
-                    <span className="text-sm text-gray-500 uppercase tracking-wide">
+                    <span className="text-sm text-[#6D6A70]/80 uppercase tracking-wide">
                       {product.type}
                     </span>
-                    <h3 className="text-xl font-semibold text-gray-800 mt-1">
+                    <h3 className="text-xl font-semibold text-[#6D6A70] mt-1">
                       {product.name}
                     </h3>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
                     {product.description}
                   </p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-full px-4 py-2 bg-transparent flex items-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </Button>
+                  <Link href={`/products/${product.name}`}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-primary text-primary hover:bg-primary hover:text-white rounded-full px-4 py-2 bg-transparent flex items-center space-x-2 cursor-pointer"
+                    >
+                      <span>Learn More</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -179,7 +184,7 @@ export default function ProductsPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-full px-8 py-3 bg-transparent"
+                className="border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-3 bg-transparent"
                 onClick={handleLoadMore}
               >
                 Load More Products

@@ -9,17 +9,19 @@ import { useRef, useState } from "react";
 import { Product } from "@/types/products";
 import Link from "next/link";
 
-interface FeaturedProductsCrousalProps {
-  featuredProducts: Product[];
+interface RelatedProductsCrousalProps {
+  relatedProducts: Product[];
+  id?: string;
 }
 
-export const FeaturedProductsCrousal = ({
-  featuredProducts,
-}: FeaturedProductsCrousalProps) => {
+export const RelatedProductsCrousal = ({
+  relatedProducts,
+  id = "related-products",
+}: RelatedProductsCrousalProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-  const totalSlides = Math.ceil(featuredProducts.length / 3);
+  const totalSlides = Math.ceil(relatedProducts.length / 3);
   const productsPerSlide = 3;
 
   const goToSlide = (slideIndex: number) => {
@@ -35,11 +37,12 @@ export const FeaturedProductsCrousal = ({
 
   const getCurrentSlideProducts = () => {
     const startIndex = currentSlide * productsPerSlide;
-    return featuredProducts.slice(startIndex, startIndex + productsPerSlide);
+    return relatedProducts.slice(startIndex, startIndex + productsPerSlide);
   };
 
   return (
     <section
+      id={id}
       className="bg-[#E7F1F6] py-32 px-4 md:px-8 w-full"
       style={{
         background:
@@ -50,12 +53,9 @@ export const FeaturedProductsCrousal = ({
         {/* Header */}
         <div className="flex flex-col md:flex-row gap-8 items-start justify-between md:items-center mb-12">
           <div className="max-w-2xl">
-            <SectionHeading>Featured Products</SectionHeading>
+            <SectionHeading>Related Products</SectionHeading>
             <p className="text-[#6D6A70] text-lg leading-relaxed">
-              Explore our latest engineering achievements and successful
-              installations across power, HVAC, mechanical, and manufacturing
-              projects. See how we bring precision and performance to every site
-              we serve.
+              Take a look at some of our related products...
             </p>
           </div>
           <CustomButton variant="outline" link="/products">
@@ -132,7 +132,7 @@ export const FeaturedProductsCrousal = ({
         {/* Mobile Products*/}
         <div className="overflow-x-auto pb-4 no-scrollbar md:hidden">
           <div className="flex space-x-6 w-max">
-            {featuredProducts.map((product) => (
+            {relatedProducts.map((product) => (
               <div
                 key={product.id}
                 className="bg-white shadow-lg overflow-hidden flex-shrink-0 h-112 w-[90vw]"

@@ -20,7 +20,7 @@ export const Partners = () => {
     <SectionCard className="">
       <div className="text-center col-span-full">
         <SectionHeading>Our Partners</SectionHeading>
-        <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className="text-[#6D6A70] text-lg leading-relaxed max-w-3xl mx-auto">
           Strategic partnerships with technology leaders enable us to deliver
           cutting-edge solutions and maintain our position at the forefront of
           industrial innovation.

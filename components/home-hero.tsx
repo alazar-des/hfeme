@@ -3,60 +3,57 @@
 import Image from "next/image";
 import { useState } from "react";
 
+const services = [
+  {
+    id: "power",
+    title: "Power & Electrical Systems",
+    color: "#b5002f",
+    hoverHeadline:
+      "Reliable Power & Electrical Systems for Critical Infrastructure",
+    hoverSubheading:
+      "From transformers to lighting and LV panels — we build dependable electrical networks.",
+    backgroundImage: "/images/image-1.jpg",
+  },
+  {
+    id: "Solar Power",
+    title: "Solar Power Solutions",
+    color: "#0077C8",
+    hoverHeadline: "Harness the Sun with Our Advanced Solar Power Systems",
+    hoverSubheading:
+      "From solar panels to complete solar power systems Design and Instalation— engineered for efficiency and sustainability.",
+    backgroundImage: "/images/resized-1200x800-image (1).jpg",
+  },
+  {
+    id: "hvac",
+    title: "HVAC & Fire Protection Solutions",
+    color: "#009fa0",
+    hoverHeadline: "HVAC and Fire Systems Engineered for Safety and Efficiency",
+    hoverSubheading:
+      "Design and installation of AC, chillers, gas lines, and fire control systems.",
+    backgroundImage: "/images/image-2.jpg",
+  },
+  {
+    id: "mechanical",
+    title: "Mechanical Fabrication & Epoxy Coating",
+    color: "#e37a00",
+    hoverHeadline: "Precision Mechanical Work & Industrial Surface Coating",
+    hoverSubheading:
+      "From steel tanks to epoxy floors — engineered for strength and protection.",
+    backgroundImage: "/images/image-3.jpg",
+  },
+  {
+    id: "manufacturing",
+    title: "Industrial Product Manufacturing",
+    color: "#004038",
+    hoverHeadline: "Engineered Components for Power Distribution and Industry",
+    hoverSubheading:
+      "Cross arms, strain clamps, insulator pins — built to spec, built to last.",
+    backgroundImage: "/images/image-4.jpg",
+  },
+];
+
 export const DesktopHero = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
-
-  const services = [
-    {
-      id: "power",
-      title: "Power & Electrical Systems",
-      color: "#b5002f",
-      hoverHeadline:
-        "Reliable Power & Electrical Systems for Critical Infrastructure",
-      hoverSubheading:
-        "From transformers to lighting and LV panels — we build dependable electrical networks.",
-      backgroundImage: "/images/image-1.jpg",
-    },
-    {
-      id: "Solar Power",
-      title: "Solar Power Solutions",
-      color: "#0077C8",
-      hoverHeadline:
-        "Harness the Sun with Our Advanced Solar Power Systems",
-      hoverSubheading:
-        "From solar panels to complete solar power systems Design and Instalation— engineered for efficiency and sustainability.",
-      backgroundImage: "/images/resized-1200x800-image (1).jpg",
-    },
-    {
-      id: "hvac",
-      title: "HVAC & Fire Protection Solutions",
-      color: "#009fa0",
-      hoverHeadline:
-        "HVAC and Fire Systems Engineered for Safety and Efficiency",
-      hoverSubheading:
-        "Design and installation of AC, chillers, gas lines, and fire control systems.",
-      backgroundImage: "/images/image-2.jpg",
-    },
-    {
-      id: "mechanical",
-      title: "Mechanical Fabrication & Epoxy Coating",
-      color: "#e37a00",
-      hoverHeadline: "Precision Mechanical Work & Industrial Surface Coating",
-      hoverSubheading:
-        "From steel tanks to epoxy floors — engineered for strength and protection.",
-      backgroundImage: "/images/image-3.jpg",
-    },
-    {
-      id: "manufacturing",
-      title: "Industrial Product Manufacturing",
-      color: "#004038",
-      hoverHeadline:
-        "Engineered Components for Power Distribution and Industry",
-      hoverSubheading:
-        "Cross arms, strain clamps, insulator pins — built to spec, built to last.",
-      backgroundImage: "/images/image-4.jpg",
-    },
-  ];
 
   const defaultHeadline = "Engineering Excellence in Electromechanical";
   const defaultSubheading =
@@ -161,48 +158,6 @@ export const DesktopHero = () => {
 };
 
 export const MobileHero = () => {
-  const services = [
-    {
-      id: "power",
-      title: "Power & Electrical Systems",
-      color: "#b5002f",
-      hoverHeadline:
-        "Reliable Power & Electrical Systems for Critical Infrastructure",
-      hoverSubheading:
-        "From transformers to lighting and LV panels — we build dependable electrical networks.",
-      backgroundImage: "/images/image-1.jpg",
-    },
-    {
-      id: "hvac",
-      title: "HVAC & Fire Protection Solutions",
-      color: "#009fa0",
-      hoverHeadline:
-        "HVAC and Fire Systems Engineered for Safety and Efficiency",
-      hoverSubheading:
-        "Design and installation of AC, chillers, gas lines, and fire control systems.",
-      backgroundImage: "/images/image-2.jpg",
-    },
-    {
-      id: "mechanical",
-      title: "Mechanical Fabrication & Epoxy Coating",
-      color: "#e37a00",
-      hoverHeadline: "Precision Mechanical Work & Industrial Surface Coating",
-      hoverSubheading:
-        "From steel tanks to epoxy floors — engineered for strength and protection.",
-      backgroundImage: "/images/image-3.jpg",
-    },
-    {
-      id: "manufacturing",
-      title: "Industrial Product Manufacturing",
-      color: "#004038",
-      hoverHeadline:
-        "Engineered Components for Power Distribution and Industry",
-      hoverSubheading:
-        "Cross arms, strain clamps, insulator pins — built to spec, built to last.",
-      backgroundImage: "/images/image-4.jpg",
-    },
-  ];
-
   return (
     <section className="flex md:hidden flex-col gap-8">
       <div className="relative h-[40svh]">
